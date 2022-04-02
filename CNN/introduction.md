@@ -1,27 +1,39 @@
 # Clasification with Keras
 
-[[_TOC_]]
+- [Clasification with Keras](#clasification-with-keras)
+  - [Densely connected layers](#densely-connected-layers)
+  - [Import sequencial model](#import-sequencial-model)
+  - [Initialize sequential model](#initialize-sequential-model)
+    - [First layer is a set of densely connected units](#first-layer-is-a-set-of-densely-connected-units)
+    - [Second layer (hidden layer)](#second-layer-hidden-layer)
+    - [The output of the network](#the-output-of-the-network)
+  - [Compilation of the model](#compilation-of-the-model)
+  - [Dimentions of the image](#dimentions-of-the-image)
+  - [Model input](#model-input)
+  - [Fit the model to training data](#fit-the-model-to-training-data)
+  - [Test set](#test-set)
 
 ## Densely connected layers 
 **->** every unit of every layer is connected to all the units in the previous layer.
 
-**->** the first layer is connected to all the pixels in the input image
+**->** the first layer is connected to all the pixels in the input image.
+
+**->** a fully connected network (only dense layers) do not retain the
+spatial relationships of the pixels.
 
 ## Import sequencial model
 
 `from keras.models import Sequential` 
 
 ## Initialize sequential model
-`model = Sequential()` 
-
-`from keras.layers import Dense`
+`model = Sequential()` <br>
+`from keras.layers import Dense`<br>
 
 ### First layer is a set of densely connected units
 
 `model.add(Dense(10,activation='relu',input_shape=(784,)))` 
-
 * 10 is the number of units
-* *more units, more complex would be the network and it's capacity to represent complex inpus
+* more units, more complex would be the network and it's capacity to represent complex inpus
 * 784 is the number of pixels of the image (height * width)
 
 ### Second layer (hidden layer)
